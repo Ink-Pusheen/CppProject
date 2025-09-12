@@ -1,0 +1,18 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-MyCppProject.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\Home\Documents\Unreal Projects\CppProject\MyCppProject\Intermediate\Build\Win64\x64\MyCppProjectEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderUnreal5_4.h.obj"
+"C:\Users\Home\Documents\Unreal Projects\CppProject\MyCppProject\Intermediate\Build\Win64\x64\UnrealEditor\Development\MyCppProject\MyCppProject.init.gen.cpp.obj"
+"C:\Users\Home\Documents\Unreal Projects\CppProject\MyCppProject\Intermediate\Build\Win64\x64\UnrealEditor\Development\MyCppProject\MyCppProjectCharacter.gen.cpp.obj"
+"C:\Users\Home\Documents\Unreal Projects\CppProject\MyCppProject\Intermediate\Build\Win64\x64\UnrealEditor\Development\MyCppProject\MyCppProjectGameMode.gen.cpp.obj"
+"C:\Users\Home\Documents\Unreal Projects\CppProject\MyCppProject\Intermediate\Build\Win64\x64\UnrealEditor\Development\MyCppProject\MyCppProject.cpp.obj"
+"C:\Users\Home\Documents\Unreal Projects\CppProject\MyCppProject\Intermediate\Build\Win64\x64\UnrealEditor\Development\MyCppProject\MyCppProjectCharacter.cpp.obj"
+"C:\Users\Home\Documents\Unreal Projects\CppProject\MyCppProject\Intermediate\Build\Win64\x64\UnrealEditor\Development\MyCppProject\MyCppProjectGameMode.cpp.obj"
+"C:\Users\Home\Documents\Unreal Projects\CppProject\MyCppProject\Intermediate\Build\Win64\x64\UnrealEditor\Development\MyCppProject\PerModuleInline.gen.cpp.obj"
+"C:\Users\Home\Documents\Unreal Projects\CppProject\MyCppProject\Intermediate\Build\Win64\x64\UnrealEditor\Development\MyCppProject\Default.rc2.res"
+/OUT:"C:\Users\Home\Documents\Unreal Projects\CppProject\MyCppProject\Intermediate\Build\Win64\x64\UnrealEditor\Development\MyCppProject\UnrealEditor-MyCppProject.lib"

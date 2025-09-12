@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\MyCppProject.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\MyCppProject.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\MyCppProjectEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\MyCppProject">
+      <UniqueIdentifier>{09A78F7E-99DF-31AC-98DF-886071C3620D}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\MyCppProject\MyCppProject.Build.cs">
+      <Filter>Source\MyCppProject</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\MyCppProject\MyCppProject.cpp">
+      <Filter>Source\MyCppProject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\MyCppProject\MyCppProject.h">
+      <Filter>Source\MyCppProject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\MyCppProject\MyCppProjectCharacter.cpp">
+      <Filter>Source\MyCppProject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\MyCppProject\MyCppProjectCharacter.h">
+      <Filter>Source\MyCppProject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\MyCppProject\MyCppProjectGameMode.cpp">
+      <Filter>Source\MyCppProject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\MyCppProject\MyCppProjectGameMode.h">
+      <Filter>Source\MyCppProject</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

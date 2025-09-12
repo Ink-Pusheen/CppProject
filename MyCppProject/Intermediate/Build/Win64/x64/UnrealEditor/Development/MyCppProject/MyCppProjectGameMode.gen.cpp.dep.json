@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\home\\documents\\unreal projects\\cppproject\\mycppproject\\intermediate\\build\\win64\\unrealeditor\\inc\\mycppproject\\uht\\mycppprojectgamemode.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\home\\documents\\unreal projects\\cppproject\\mycppproject\\intermediate\\build\\win64\\x64\\mycppprojecteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderunreal5_4.h.pch",
+        "Includes": [
+            "c:\\users\\home\\documents\\unreal projects\\cppproject\\mycppproject\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\mycppproject\\definitions.mycppproject.h",
+            "c:\\users\\home\\documents\\unreal projects\\cppproject\\mycppproject\\source\\mycppproject\\mycppprojectgamemode.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemodebase.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\serverstatreplicator.generated.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamemodebase.generated.h",
+            "c:\\users\\home\\documents\\unreal projects\\cppproject\\mycppproject\\intermediate\\build\\win64\\unrealeditor\\inc\\mycppproject\\uht\\mycppprojectgamemode.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
