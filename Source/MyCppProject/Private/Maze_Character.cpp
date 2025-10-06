@@ -23,13 +23,46 @@ void AMaze_Character::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	AddMovementInput(GetActorForwardVector(), moveSpeed);
+	
 }
 
 // Called to bind functionality to input
 void AMaze_Character::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
+	PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &AMaze_Character::MoveForward);
+	PlayerInputComponent->BindAxis(TEXT("MoveSideways"), this, &AMaze_Character::MoveSideways);
+	PlayerInputComponent->BindAxis(TEXT("Horizontal"), this, &AMaze_Character::AddYaw);
+	PlayerInputComponent->BindAxis(TEXT("Vertical"), this, &AMaze_Character::AddPitch);
+	PlayerInputComponent->BindAction(TEXT("Jump"), IE_Pressed, this, &AMaze_Character::StartJump);
 }
 
+void AMaze_Character::MoveForward(float speed)
+{
+	AddMovementInput(GetActorForwardVector(), speed * moveSpeed);
+}
+
+void AMaze_Character::MoveSideways(float speed)
+{
+	AddMovementInput(GetActorRightVector(), speed * moveSpeed);
+}
+
+void AMaze_Character::Rotate(float rotation)
+{
+	AddControllerYawInput(rotation * turnSpeed);
+}
+
+void AMaze_Character::AddYaw(float yawVal)
+{
+	AddControllerYawInput(yawVal * turnSpeed);
+}
+
+void AMaze_Character::AddPitch(float pitchVal)
+{
+	AddControllerPitchInput(pitchVal * turnSpeed);
+}
+
+void AMaze_Character::StartJump()
+{
+	Jump();
+}

@@ -35,4 +35,16 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	//Movement functions
+	virtual void MoveForward(float speed);
+
+	virtual void MoveSideways(float speed);
+
+	virtual void Rotate(float rotation);
+
+	virtual void StartJump();
+
+	virtual void AddYaw(float yawVal);
+
+	virtual void AddPitch(float pitchVal);
 };
