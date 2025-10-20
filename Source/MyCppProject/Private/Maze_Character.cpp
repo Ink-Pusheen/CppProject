@@ -16,6 +16,8 @@ void AMaze_Character::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	//Sets the players health to max
+	_curHealth = maxHealth;
 }
 
 // Called every frame
@@ -65,4 +67,39 @@ void AMaze_Character::AddPitch(float pitchVal)
 void AMaze_Character::StartJump()
 {
 	Jump();
+}
+
+//Damage Functions
+
+float AMaze_Character::TakeDamage(float damageTaken, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageDealer)
+{
+	if (moveSpeed == 0) return 0; //Break this so the player health doesn't infinitely go down
+
+	//Applies the damage to the player
+	_curHealth -= damageTaken;
+
+	//Check if the player is dead
+	if (_curHealth <= 0)
+	{
+		Die();
+	}
+
+	//Log
+	UE_LOG(LogTemp, Log, TEXT("Player took %f damage. %f health remains"), damageTaken, _curHealth);
+
+	if (GEngine) //Testing
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("Player took damage!"));
+	}
+
+	return damageTaken;
+}
+
+void AMaze_Character::Die()
+{
+	//Halts all player movement
+	moveSpeed = 0;
+	turnSpeed = 0;
+
+	//Soon, allow the player to reset the scene
 }

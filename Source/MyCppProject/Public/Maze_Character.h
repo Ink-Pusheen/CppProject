@@ -24,9 +24,16 @@ public:
 	// Sets default values for this character's properties
 	AMaze_Character();
 
+	//Public max health
+	UPROPERTY(EditAnywhere)
+	float maxHealth;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	//Protected Health variable
+	float _curHealth;
 
 public:	
 	// Called every frame
@@ -47,4 +54,10 @@ public:
 	virtual void AddYaw(float yawVal);
 
 	virtual void AddPitch(float pitchVal);
+
+	//Damage Functions
+	UFUNCTION(BlueprintCallable)
+	virtual float TakeDamage(float damageTaken, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageDealer);
+
+	virtual void Die();
 };
