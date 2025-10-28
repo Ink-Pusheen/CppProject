@@ -37,6 +37,7 @@ void AMaze_Character::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 	PlayerInputComponent->BindAxis(TEXT("Horizontal"), this, &AMaze_Character::AddYaw);
 	PlayerInputComponent->BindAxis(TEXT("Vertical"), this, &AMaze_Character::AddPitch);
 	PlayerInputComponent->BindAction(TEXT("Jump"), IE_Pressed, this, &AMaze_Character::StartJump);
+	PlayerInputComponent->BindAction(TEXT("Stun"), IE_Pressed, this, &AMaze_Character::StunEnemies);
 }
 
 void AMaze_Character::MoveForward(float speed)
@@ -62,6 +63,14 @@ void AMaze_Character::AddYaw(float yawVal)
 void AMaze_Character::AddPitch(float pitchVal)
 {
 	AddControllerPitchInput(pitchVal * turnSpeed);
+}
+
+void AMaze_Character::StunEnemies()
+{
+	//Get all AI within a radius of the character
+	//Call the stun event on those AI it hits. The event will set "isStunned" on the blackboard to true and set a timer
+	//	isStunned is their first Check so it is comitted first
+	//	...
 }
 
 void AMaze_Character::StartJump()
