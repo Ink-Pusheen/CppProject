@@ -55,6 +55,9 @@ public:
 
 	virtual void AddPitch(float pitchVal);
 
+	//Stun Function
+	virtual void StunEnemies();
+
 	//Damage Functions
 	UFUNCTION(BlueprintCallable)
 	virtual float TakeDamage(float damageTaken, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageDealer);
