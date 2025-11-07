@@ -14,28 +14,19 @@ APickup_Base::APickup_Base()
 
 void APickup_Base::CheckActorType(AActor* OverlappedActor, AActor* otherActor)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("Error"));
 	if (otherActor)
 	{
 		//Checks if the overlapping object has the spring arm component
 		USpringArmComponent* springArm = otherActor->FindComponentByClass<USpringArmComponent>();
 
-		if (GEngine) //Testing
-		{
-			if (!springArm) GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("Has no player input"));
+		if (!springArm) GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("Has no player input"));
 
-			else  GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("Has player input"));
-
-		}
+		else  GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("Has player input"));
 
 		//If the overlapping does have a spring arm
 		if (springArm)
 		{
-			OverlapFunction(); //If they do have it, run the overlap function
-		}
-		else
-		{
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("Error"));
+			OverlapFunction(otherActor); //If they do have it, run the overlap function
 		}
 	}
 	else {
@@ -47,6 +38,6 @@ void APickup_Base::CheckActorType(AActor* OverlappedActor, AActor* otherActor)
 	}
 }
 
-void APickup_Base::OverlapFunction()
+void APickup_Base::OverlapFunction(AActor* player)
 {
 }

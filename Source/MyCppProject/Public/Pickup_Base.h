@@ -24,6 +24,6 @@ public:
 
 	//Function to derive custom functions onto
 	UFUNCTION()
-	void OverlapFunction();
+	virtual void OverlapFunction(AActor* player);
 
 };

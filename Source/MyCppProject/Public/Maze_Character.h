@@ -24,16 +24,22 @@ public:
 	// Sets default values for this character's properties
 	AMaze_Character();
 
-	//Public max health
+	//Public health variables
+	UPROPERTY(EditAnywhere)
+	float _curHealth;
+
 	UPROPERTY(EditAnywhere)
 	float maxHealth;
+
+	UPROPERTY(EditAnywhere)
+	UCharacterMovementComponent* CharMovement;
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	//Protected Health variable
-	float _curHealth;
+	//Timer for speed up functionality
+	FTimerHandle MyTimer;
 
 public:	
 	// Called every frame
@@ -57,6 +63,14 @@ public:
 
 	//Stun Function
 	virtual void StunEnemies();
+
+	//Healing functions
+	virtual void HealWounds(float healAmt);
+
+	//Speed functions
+	virtual void SpeedUp();
+
+	virtual void SlowDown();
 
 	//Damage Functions
 	UFUNCTION(BlueprintCallable)

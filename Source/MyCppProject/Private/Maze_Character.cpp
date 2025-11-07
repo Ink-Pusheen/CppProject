@@ -2,6 +2,7 @@
 
 
 #include "Maze_Character.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 // Sets default values
 AMaze_Character::AMaze_Character()
@@ -9,6 +10,7 @@ AMaze_Character::AMaze_Character()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	CharMovement = GetCharacterMovement();
 }
 
 // Called when the game starts or when spawned
@@ -78,7 +80,40 @@ void AMaze_Character::StartJump()
 	Jump();
 }
 
+//Speed functions
+
+void AMaze_Character::SpeedUp()
+{
+	if (CharMovement->MaxWalkSpeed != 600) return; //Return if the player is alread speed up
+
+	CharMovement->MaxWalkSpeed += 600.f; //Speeds the player up
+
+	//Proof on concept
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("Player Sped up"));
+
+	//Starts the timer to slow the player down after 3 seconds
+	GetWorldTimerManager().SetTimer(MyTimer, this, &AMaze_Character::SlowDown, 3.f, false);
+}
+
+void AMaze_Character::SlowDown()
+{
+	CharMovement->MaxWalkSpeed -= 600.f; //Slows the player down
+
+	//Proof of concept
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("Player Slowed"));
+}
+
 //Damage Functions
+
+void AMaze_Character::HealWounds(float healAmt)
+{
+	_curHealth += healAmt; //Heals the designated amount
+
+	if (_curHealth > maxHealth) _curHealth = maxHealth; //Hard limit the health so it doesn't overflow
+
+	//Proof of concept
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Current HP: %f"), _curHealth));
+}
 
 float AMaze_Character::TakeDamage(float damageTaken, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageDealer)
 {
@@ -99,6 +134,9 @@ float AMaze_Character::TakeDamage(float damageTaken, FDamageEvent const& DamageE
 	if (GEngine) //Testing
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("Player took damage!"));
+
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Current HP: %f"), _curHealth));
+
 	}
 
 	return damageTaken;
