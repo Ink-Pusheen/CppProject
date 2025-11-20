@@ -25,10 +25,10 @@ public:
 	AMaze_Character();
 
 	//Public health variables
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	float _curHealth;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	float maxHealth;
 
 	UPROPERTY(EditAnywhere)
