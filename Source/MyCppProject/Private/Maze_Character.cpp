@@ -20,6 +20,10 @@ void AMaze_Character::BeginPlay()
 	
 	//Sets the players health to max
 	_curHealth = maxHealth;
+
+	_controller = Cast<APlayerController>(GetController());
+
+	//_gameOverScreen = CreateWidget(GetWorld(), _gameOverTemplate);
 }
 
 // Called every frame
@@ -142,11 +146,19 @@ float AMaze_Character::TakeDamage(float damageTaken, FDamageEvent const& DamageE
 	return damageTaken;
 }
 
+void AMaze_Character::CheckHealth()
+{
+
+}
+
 void AMaze_Character::Die()
 {
 	//Halts all player movement
 	moveSpeed = 0;
 	turnSpeed = 0;
+
+	_controller->bShowMouseCursor = true;
+	//_gameOverScreen->AddToViewport();
 
 	//Soon, allow the player to reset the scene
 }

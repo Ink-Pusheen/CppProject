@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Blueprint/UserWidget.h"
 #include "Maze_Character.generated.h"
 
 UCLASS()
@@ -34,12 +35,19 @@ public:
 	UPROPERTY(EditAnywhere)
 	UCharacterMovementComponent* CharMovement;
 
+	//UPROPERTY(EditAnywhere)
+	//	TSubclassOf<UUserWidget> gameOverTemplate;
+	//UUserWidget* gameOverScreen;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 	//Timer for speed up functionality
 	FTimerHandle MyTimer;
+
+	//Player Controller
+	APlayerController* _controller;
 
 public:	
 	// Called every frame
@@ -75,6 +83,9 @@ public:
 	//Damage Functions
 	UFUNCTION(BlueprintCallable)
 	virtual float TakeDamage(float damageTaken, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageDealer);
+
+	UFUNCTION(BlueprintCallable)
+	virtual void CheckHealth();
 
 	virtual void Die();
 };
