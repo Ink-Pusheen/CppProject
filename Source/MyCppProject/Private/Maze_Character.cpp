@@ -86,11 +86,18 @@ void AMaze_Character::StartJump()
 
 //Speed functions
 
+void AMaze_Character::AddSprinter()
+{
+	sprinters++; //Add one to sprinters
+}
+
 void AMaze_Character::SpeedUp()
 {
 	if (CharMovement->MaxWalkSpeed != 600) return; //Return if the player is alread speed up
 
 	CharMovement->MaxWalkSpeed += 600.f; //Speeds the player up
+
+	sprinters--; //Subtract a sprinter
 
 	//Proof on concept
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("Player Sped up"));

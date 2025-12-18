@@ -32,6 +32,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	float maxHealth;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	int sprinters;
+
 	UPROPERTY(EditAnywhere)
 	UCharacterMovementComponent* CharMovement;
 
@@ -76,6 +79,9 @@ public:
 	virtual void HealWounds(float healAmt);
 
 	//Speed functions
+	virtual void AddSprinter();
+
+	UFUNCTION(BlueprintCallable)
 	virtual void SpeedUp();
 
 	virtual void SlowDown();
