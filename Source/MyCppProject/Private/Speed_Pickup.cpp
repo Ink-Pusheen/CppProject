@@ -10,5 +10,8 @@ void ASpeed_Pickup::OverlapFunction(AActor* player)
 	AMaze_Character* playerInstance = Cast<AMaze_Character>(player);
 
 	//Applies the speed to the player
-	playerInstance->SpeedUp();
+	//playerInstance->SpeedUp();
+	playerInstance->sprinters++;
+
+	this->Destroy();
 }
