@@ -1,8 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Maze_Character.h"
 #include "Key_Pickup.h"
+#include "Maze_Character.h"
 #include "Door_Object.h"
 #include "GameFramework/Actor.h"
 #include "GameFramework/SpringArmComponent.h"

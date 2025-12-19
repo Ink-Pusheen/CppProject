@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "Blueprint/UserWidget.h"
 #include "Maze_Character.generated.h"
 
 UCLASS()
@@ -37,10 +36,6 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	UCharacterMovementComponent* CharMovement;
-
-	//UPROPERTY(EditAnywhere)
-	//	TSubclassOf<UUserWidget> gameOverTemplate;
-	//UUserWidget* gameOverScreen;
 
 protected:
 	// Called when the game starts or when spawned
